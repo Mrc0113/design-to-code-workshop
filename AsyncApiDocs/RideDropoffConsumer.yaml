@@ -1,0 +1,85 @@
+components:
+  schemas:
+    RideAveragePayload:
+      default: {}
+      $schema: 'http://json-schema.org/draft-07/schema'
+      examples:
+        - avg_meter_reading: 21.615217
+          window_duration_sec: 300
+          avg_passenger_count: 1.5
+          window_ride_count: 5
+          timestamp: '2020-06-04T20:09:59.99832-04:00'
+      description: >-
+        Event Payload which contains average meter readings, average passenger
+        counts, and the number of rides in a given window duration.
+      additionalProperties: true
+      type: object
+      title: The root schema
+      required:
+        - timestamp
+        - avg_meter_reading
+        - avg_passenger_count
+        - window_duration_sec
+        - window_ride_count
+      properties:
+        avg_meter_reading:
+          default: 0
+          examples:
+            - 21.615217
+          description: An explanation about the purpose of this instance.
+          type: number
+          title: The avg_meter_reading schema
+          $id: '#/properties/avg_meter_reading'
+        window_duration_sec:
+          default: 0
+          examples:
+            - 300
+          description: An explanation about the purpose of this instance.
+          type: integer
+          title: The window_duration_sec schema
+          $id: '#/properties/window_duration_sec'
+        avg_passenger_count:
+          default: 0
+          examples:
+            - 1.5
+          description: An explanation about the purpose of this instance.
+          type: number
+          title: The avg_passenger_count schema
+          $id: '#/properties/avg_passenger_count'
+        window_ride_count:
+          default: 0
+          examples:
+            - 5
+          description: An explanation about the purpose of this instance.
+          type: integer
+          title: The window_ride_count schema
+          $id: '#/properties/window_ride_count'
+        timestamp:
+          default: ''
+          examples:
+            - '2020-06-04T20:09:59.99832-04:00'
+          description: An explanation about the purpose of this instance.
+          type: string
+          title: The timestamp schema
+          $id: '#/properties/timestamp'
+      $id: 'http://example.com/example.json'
+  messages:
+    RideAverageUpdate:
+      payload:
+        $ref: '#/components/schemas/RideAveragePayload'
+      description: This event contains the average cost of rides over a specified duration
+      schemaFormat: application/vnd.aai.asyncapi+json;version=2.0.0
+      contentType: application/json
+channels:
+  taxi/nyc/v1/stats/dropoff/avg:
+    subscribe:
+      message:
+        $ref: '#/components/messages/RideAverageUpdate'
+asyncapi: 2.0.0
+info:
+  description: >-
+    This is a spring cloud stream microservice that will consume summary events for
+    further analysis
+  title: RideDropoffConsumer
+  x-view: provider
+  version: 0.0.1
