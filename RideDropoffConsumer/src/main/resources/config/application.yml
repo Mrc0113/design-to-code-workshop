@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    stream:
+      function:
+        definition: taxiNycV1StatsDropoffAvgConsumer
+      bindings:
+        taxiNycV1StatsDropoffAvgConsumer-in-0:
+          destination: test/taxi/yourname/nyc/v1/stats/dropoff/avg
+solace:
+  java:
+    host: tcp://mr-d8f4yze27kt.messaging.solace.cloud:55555
+    msgVpn: cto-demo-virginia-azure
+    clientUsername: public-taxi-user
+    clientPassword: iliketaxis
+logging:
+  level:
+    root: info
+    org:
+      springframework: info
+server:
+  port: 8081
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+

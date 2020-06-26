@@ -181,10 +181,13 @@ components:
 channels:
   'taxi/nyc/v1/${ride_status}/${passenger_count}/${ride_id}/${longitude}/${latitude}':
     subscribe:
+      x-scs-function-name: processDropoffRideAverages
+      x-scs-destination: test/taxi/RideDropoffProcessorQueue
       message:
         $ref: '#/components/messages/TaxiStatusUpdate'
   taxi/nyc/v1/stats/dropoff/avg:
     publish:
+      x-scs-function-name: processDropoffRideAverages
       message:
         $ref: '#/components/messages/RideAverageUpdate'
 asyncapi: 2.0.0
