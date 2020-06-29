@@ -5,7 +5,7 @@ spring:
         definition: processDropoffRideAverages
       bindings:
         processDropoffRideAverages-out-0:
-          destination: test/taxi/yourname2/nyc/v1/stats/dropoff/avg
+          destination: test/taxi/yourname/nyc/v1/stats/dropoff/avg
         processDropoffRideAverages-in-0:
           destination: test/taxi/RideDropoffProcessorQueue
       solace:
