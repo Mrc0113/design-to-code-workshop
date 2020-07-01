@@ -1,0 +1,158 @@
+{
+  "createdTime": 1593566921166,
+  "updatedTime": 1593566921166,
+  "createdBy": "155penx6vkk3",
+  "changedBy": "155penx6vkk3",
+  "id": "6685wonq0sn",
+  "name": "NYC Modern Taxi Co",
+  "topicDomain": "taxi/nyc",
+  "description": "",
+  "enforceUniqueTopicNames": true,
+  "type": "applicationDomain",
+  "events": [
+    {
+      "createdTime": 1593567728377,
+      "updatedTime": 1593567728377,
+      "createdBy": "155penx6vkk3",
+      "changedBy": "155penx6vkk3",
+      "id": "6685wonq0wt",
+      "name": "RideAverageUpdate",
+      "version": "0.0.1",
+      "shared": false,
+      "topicName": "taxi/nyc/v1/stats/dropoff/avg",
+      "description": "<p><span style=\"color: rgb(0, 0, 0);\">This event contains the average cost of rides over a specified duration</span></p>",
+      "schemaId": "6685wonq0vz",
+      "applicationDomainId": "6685wonq0sn",
+      "producedApplicationIds": [
+        "6685wonq0uv"
+      ],
+      "consumedApplicationIds": [
+        "6685wonq0xx"
+      ],
+      "revisionNumber": 1,
+      "brokerType": "solace",
+      "type": "event"
+    },
+    {
+      "createdTime": 1593566921193,
+      "updatedTime": 1593566921193,
+      "createdBy": "155penx6vkk3",
+      "changedBy": "155penx6vkk3",
+      "id": "6685wonq0tr",
+      "name": "TaxiStatusUpdate",
+      "version": "0.0.1",
+      "shared": false,
+      "topicName": "taxi/nyc/v1/${ride_status}/${passenger_count}/${ride_id}/${longitude}/${latitude}",
+      "description": "",
+      "schemaId": "6685wonq0t7",
+      "applicationDomainId": "6685wonq0sn",
+      "producedApplicationIds": [
+        "6685wonq0ub"
+      ],
+      "consumedApplicationIds": [
+        "6685wonq0uv"
+      ],
+      "revisionNumber": 1,
+      "brokerType": "unspecified",
+      "type": "event"
+    }
+  ],
+  "schemas": [
+    {
+      "createdTime": 1593567723664,
+      "updatedTime": 1593567723664,
+      "createdBy": "155penx6vkk3",
+      "changedBy": "155penx6vkk3",
+      "id": "6685wonq0vz",
+      "name": "RideAveragePayload",
+      "version": "0.0.1",
+      "shared": false,
+      "description": "<p><span style=\"color: rgb(0, 0, 0);\">Event Payload which contains average meter readings, average passenger counts, and the number of rides in a given window duration.</span></p>",
+      "contentType": "JSON",
+      "content": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema\",\n  \"$id\": \"http://example.com/example.json\",\n  \"type\": \"object\",\n  \"title\": \"The root schema\",\n  \"description\": \"The root schema comprises the entire JSON document.\",\n  \"default\": {},\n  \"examples\": [\n    {\n      \"timestamp\": \"2020-06-04T20:09:59.99832-04:00\",\n      \"avg_meter_reading\": 21.615217,\n      \"avg_passenger_count\": 1.5,\n      \"window_duration_sec\": 300,\n      \"window_ride_count\": 5\n    }\n  ],\n  \"required\": [\n    \"timestamp\",\n    \"avg_meter_reading\",\n    \"avg_passenger_count\",\n    \"window_duration_sec\",\n    \"window_ride_count\"\n  ],\n  \"additionalProperties\": true,\n  \"properties\": {\n    \"timestamp\": {\n      \"$id\": \"#/properties/timestamp\",\n      \"type\": \"string\",\n      \"title\": \"The timestamp schema\",\n      \"description\": \"An explanation about the purpose of this instance.\",\n      \"default\": \"\",\n      \"examples\": [\n        \"2020-06-04T20:09:59.99832-04:00\"\n      ]\n    },\n    \"avg_meter_reading\": {\n      \"$id\": \"#/properties/avg_meter_reading\",\n      \"type\": \"number\",\n      \"title\": \"The avg_meter_reading schema\",\n      \"description\": \"An explanation about the purpose of this instance.\",\n      \"default\": 0,\n      \"examples\": [\n        21.615217\n      ]\n    },\n    \"avg_passenger_count\": {\n      \"$id\": \"#/properties/avg_passenger_count\",\n      \"type\": \"number\",\n      \"title\": \"The avg_passenger_count schema\",\n      \"description\": \"An explanation about the purpose of this instance.\",\n      \"default\": 0,\n      \"examples\": [\n        1.5\n      ]\n    },\n    \"window_duration_sec\": {\n      \"$id\": \"#/properties/window_duration_sec\",\n      \"type\": \"integer\",\n      \"title\": \"The window_duration_sec schema\",\n      \"description\": \"An explanation about the purpose of this instance.\",\n      \"default\": 0,\n      \"examples\": [\n        300\n      ]\n    },\n    \"window_ride_count\": {\n      \"$id\": \"#/properties/window_ride_count\",\n      \"type\": \"integer\",\n      \"title\": \"The window_ride_count schema\",\n      \"description\": \"An explanation about the purpose of this instance.\",\n      \"default\": 0,\n      \"examples\": [\n        5\n      ]\n    }\n  }\n}",
+      "eventIds": [
+        "6685wonq0wt"
+      ],
+      "applicationDomainId": "6685wonq0sn",
+      "revisionNumber": 1,
+      "type": "schema"
+    },
+    {
+      "createdTime": 1593566921184,
+      "updatedTime": 1593566921184,
+      "createdBy": "155penx6vkk3",
+      "changedBy": "155penx6vkk3",
+      "id": "6685wonq0t7",
+      "name": "TaxiStatusUpdatePayload",
+      "version": "0.0.1",
+      "shared": false,
+      "description": "",
+      "contentType": "JSON",
+      "content": "{\n    \"$schema\": \"http://json-schema.org/draft-07/schema\",\n    \"$id\": \"http://example.com/example.json\",\n    \"type\": \"object\",\n    \"title\": \"The root schema\",\n    \"description\": \"The root schema comprises the entire JSON document.\",\n    \"default\": {},\n    \"examples\": [\n        {\n            \"ride_id\": \"545496 c5 - a334 - 4344 - 9662 - efde68c0b98a\",\n            \"point_idx\": 107,\n            \"latitude\": 40.75473,\n            \"longitude\": -73.98385,\n            \"timestamp\": \"2020 - 06 - 03 T16: 51: 47.29612 - 04:00\",\n            \"meter_reading\": 2.4375222,\n            \"meter_increment\": 0.02278058,\n            \"ride_status\": \"enroute\",\n            \"passenger_count\": 1\n        }\n    ],\n    \"required\": [\n        \"ride_id\",\n        \"point_idx\",\n        \"latitude\",\n        \"longitude\",\n        \"timestamp\",\n        \"meter_reading\",\n        \"meter_increment\",\n        \"ride_status\",\n        \"passenger_count\"\n    ],\n    \"additionalProperties\": true,\n    \"properties\": {\n        \"ride_id\": {\n            \"$id\": \"#/properties/ride_id\",\n            \"type\": \"string\",\n            \"format\": \"uuid\",\n            \"title\": \"The ride_id schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": \"\",\n            \"examples\": [\n                \"545496 c5 - a334 - 4344 - 9662 - efde68c0b98a\"\n            ]\n        },\n        \"point_idx\": {\n            \"$id\": \"#/properties/point_idx\",\n            \"type\": \"integer\",\n            \"title\": \"The point_idx schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0,\n            \"examples\": [\n                107\n            ]\n        },\n        \"latitude\": {\n            \"$id\": \"#/properties/latitude\",\n            \"type\": \"number\",\n            \"title\": \"The latitude schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0.0,\n            \"examples\": [\n                40.75473\n            ]\n        },\n        \"longitude\": {\n            \"$id\": \"#/properties/longitude\",\n            \"type\": \"number\",\n            \"title\": \"The longitude schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0.0,\n            \"examples\": [\n                -73.98385\n            ]\n        },\n        \"timestamp\": {\n            \"$id\": \"#/properties/timestamp\",\n            \"type\": \"string\",\n            \"title\": \"The timestamp schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": \"\",\n            \"examples\": [\n                \"2020-06-03T16:51:47.29612-04:00\"\n            ]\n        },\n        \"meter_reading\": {\n            \"$id\": \"#/properties/meter_reading\",\n            \"type\": \"number\",\n            \"title\": \"The meter_reading schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0.0,\n            \"examples\": [\n                2.4375222\n            ]\n        },\n        \"meter_increment\": {\n            \"$id\": \"#/properties/meter_increment\",\n            \"type\": \"number\",\n            \"title\": \"The meter_increment schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0.0,\n            \"examples\": [\n                0.02278058\n            ]\n        },\n        \"ride_status\": {\n            \"$id\": \"#/properties/ride_status\",\n            \"type\": \"string\",\n            \"title\": \"The ride_status schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": \"\",\n            \"examples\": [\n                \"enroute\"\n            ]\n        },\n        \"passenger_count\": {\n            \"$id\": \"#/properties/passenger_count\",\n            \"type\": \"integer\",\n            \"title\": \"The passenger_count schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0,\n            \"examples\": [\n                1\n            ]\n        }\n    }\n}",
+      "eventIds": [
+        "6685wonq0tr"
+      ],
+      "applicationDomainId": "6685wonq0sn",
+      "revisionNumber": 1,
+      "type": "schema"
+    }
+  ],
+  "applications": [
+    {
+      "createdTime": 1593570012214,
+      "updatedTime": 1593570012214,
+      "createdBy": "155penx6vkk3",
+      "changedBy": "155penx6vkk3",
+      "id": "6685wonq0xx",
+      "name": "RideDropoffConsumer",
+      "version": "0.0.1",
+      "description": "<p><span style=\"color: rgb(0, 0, 0);\">This is a Spring Cloud Stream microservice that will consume summary events for further analysis</span></p>",
+      "applicationDomainId": "6685wonq0sn",
+      "producedEventIds": [],
+      "consumedEventIds": [
+        "6685wonq0wt"
+      ],
+      "revisionNumber": 1,
+      "applicationClass": "unspecified",
+      "type": "application"
+    },
+    {
+      "createdTime": 1593567102652,
+      "updatedTime": 1593567746203,
+      "createdBy": "155penx6vkk3",
+      "changedBy": "155penx6vkk3",
+      "id": "6685wonq0uv",
+      "name": "RideDropoffProcessor",
+      "version": "0.0.1",
+      "description": "<p><span style=\"color: rgb(0, 0, 0);\">This is a Spring Cloud Stream microservice that will consume the TaxiStatusUpdates with a ride status of \"dropoff\", process the events, and output summary events.</span></p>",
+      "applicationDomainId": "6685wonq0sn",
+      "producedEventIds": [
+        "6685wonq0wt"
+      ],
+      "consumedEventIds": [
+        "6685wonq0tr"
+      ],
+      "revisionNumber": 2,
+      "applicationClass": "unspecified",
+      "type": "application"
+    },
+    {
+      "createdTime": 1593566921201,
+      "updatedTime": 1593566921201,
+      "createdBy": "155penx6vkk3",
+      "changedBy": "155penx6vkk3",
+      "id": "6685wonq0ub",
+      "name": "Taxis",
+      "version": "0.0.1",
+      "description": "",
+      "applicationDomainId": "6685wonq0sn",
+      "producedEventIds": [
+        "6685wonq0tr"
+      ],
+      "consumedEventIds": [],
+      "revisionNumber": 1,
+      "applicationClass": "unspecified",
+      "type": "application"
+    }
+  ]
+}
