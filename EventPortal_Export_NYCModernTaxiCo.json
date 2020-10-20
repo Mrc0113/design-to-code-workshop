@@ -1,75 +1,89 @@
-{
-  "createdTime": 1591276285596,
-  "updatedTime": 1592504019472,
-  "createdBy": "mc1va1xb",
-  "changedBy": "mc1va1xb",
-  "id": "29seozjj1",
-  "name": "NYC Modern Taxi Co",
-  "topicDomain": "taxi/nyc",
-  "description": "",
-  "enforceUniqueTopicNames": true,
-  "type": "applicationDomain",
-  "events": [
-    {
-      "createdTime": 1591277119801,
-      "updatedTime": 1591381075804,
-      "createdBy": "mc1va1xb",
-      "changedBy": "mc1va1xb",
-      "id": "29seozjkz",
-      "name": "TaxiStatusUpdate",
-      "version": "0.0.1",
-      "shared": false,
-      "topicName": "taxi/nyc/v1/${ride_status}/${passenger_count}/${ride_id}/${longitude}/${latitude}",
-      "description": "",
-      "schemaId": "29seozjjv",
-      "applicationDomainId": "29seozjj1",
-      "producedApplicationIds": [
-        "29seozjlt"
-      ],
-      "consumedApplicationIds": [],
-      "revisionNumber": 4,
-      "brokerType": "unspecified",
-      "type": "event"
-    }
-  ],
-  "schemas": [
-    {
-      "createdTime": 1591276825200,
-      "updatedTime": 1591276852014,
-      "createdBy": "mc1va1xb",
-      "changedBy": "mc1va1xb",
-      "id": "29seozjjv",
-      "name": "TaxiStatusUpdatePayload",
-      "version": "0.0.1",
-      "shared": false,
-      "description": "",
-      "contentType": "JSON",
-      "content": "{\n    \"$schema\": \"http://json-schema.org/draft-07/schema\",\n    \"$id\": \"http://example.com/example.json\",\n    \"type\": \"object\",\n    \"title\": \"The root schema\",\n    \"description\": \"The root schema comprises the entire JSON document.\",\n    \"default\": {},\n    \"examples\": [\n        {\n            \"ride_id\": \"545496 c5 - a334 - 4344 - 9662 - efde68c0b98a\",\n            \"point_idx\": 107,\n            \"latitude\": 40.75473,\n            \"longitude\": -73.98385,\n            \"timestamp\": \"2020 - 06 - 03 T16: 51: 47.29612 - 04:00\",\n            \"meter_reading\": 2.4375222,\n            \"meter_increment\": 0.02278058,\n            \"ride_status\": \"enroute\",\n            \"passenger_count\": 1\n        }\n    ],\n    \"required\": [\n        \"ride_id\",\n        \"point_idx\",\n        \"latitude\",\n        \"longitude\",\n        \"timestamp\",\n        \"meter_reading\",\n        \"meter_increment\",\n        \"ride_status\",\n        \"passenger_count\"\n    ],\n    \"additionalProperties\": true,\n    \"properties\": {\n        \"ride_id\": {\n            \"$id\": \"#/properties/ride_id\",\n            \"type\": \"string\",\n            \"format\": \"uuid\",\n            \"title\": \"The ride_id schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": \"\",\n            \"examples\": [\n                \"545496 c5 - a334 - 4344 - 9662 - efde68c0b98a\"\n            ]\n        },\n        \"point_idx\": {\n            \"$id\": \"#/properties/point_idx\",\n            \"type\": \"integer\",\n            \"title\": \"The point_idx schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0,\n            \"examples\": [\n                107\n            ]\n        },\n        \"latitude\": {\n            \"$id\": \"#/properties/latitude\",\n            \"type\": \"number\",\n            \"title\": \"The latitude schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0.0,\n            \"examples\": [\n                40.75473\n            ]\n        },\n        \"longitude\": {\n            \"$id\": \"#/properties/longitude\",\n            \"type\": \"number\",\n            \"title\": \"The longitude schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0.0,\n            \"examples\": [\n                -73.98385\n            ]\n        },\n        \"timestamp\": {\n            \"$id\": \"#/properties/timestamp\",\n            \"type\": \"string\",\n            \"title\": \"The timestamp schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": \"\",\n            \"examples\": [\n                \"2020-06-03T16:51:47.29612-04:00\"\n            ]\n        },\n        \"meter_reading\": {\n            \"$id\": \"#/properties/meter_reading\",\n            \"type\": \"number\",\n            \"title\": \"The meter_reading schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0.0,\n            \"examples\": [\n                2.4375222\n            ]\n        },\n        \"meter_increment\": {\n            \"$id\": \"#/properties/meter_increment\",\n            \"type\": \"number\",\n            \"title\": \"The meter_increment schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0.0,\n            \"examples\": [\n                0.02278058\n            ]\n        },\n        \"ride_status\": {\n            \"$id\": \"#/properties/ride_status\",\n            \"type\": \"string\",\n            \"title\": \"The ride_status schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": \"\",\n            \"examples\": [\n                \"enroute\"\n            ]\n        },\n        \"passenger_count\": {\n            \"$id\": \"#/properties/passenger_count\",\n            \"type\": \"integer\",\n            \"title\": \"The passenger_count schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0,\n            \"examples\": [\n                1\n            ]\n        }\n    }\n}",
-      "eventIds": [
-        "29seozjkz"
-      ],
-      "applicationDomainId": "29seozjj1",
-      "revisionNumber": 2,
-      "type": "schema"
-    }
-  ],
-  "applications": [
-    {
-      "createdTime": 1591277133582,
-      "updatedTime": 1591650927193,
-      "createdBy": "mc1va1xb",
-      "changedBy": "mc1va1xb",
-      "id": "29seozjlt",
-      "name": "Taxis",
-      "version": "0.0.1",
-      "description": "",
-      "applicationDomainId": "29seozjj1",
-      "producedEventIds": [
-        "29seozjkz"
-      ],
-      "consumedEventIds": [],
-      "revisionNumber": 5,
-      "type": "application"
-    }
-  ]
-}
+[
+  {
+    "createdTime": 1603212653048,
+    "updatedTime": 1603213088999,
+    "createdBy": "q0vn2d5vxmp",
+    "changedBy": "q0vn2d5vxmp",
+    "id": "wn33ovmz1kr",
+    "name": "NYC Modern Taxi Co",
+    "topicDomain": " taxinyc/ops",
+    "description": "",
+    "enforceUniqueTopicNames": true,
+    "schemas": [
+      {
+        "createdTime": 1603212653053,
+        "updatedTime": 1603215994710,
+        "createdBy": "q0vn2d5vxmp",
+        "changedBy": "q0vn2d5vxmp",
+        "id": "wn33ovmz1lb",
+        "name": "TaxiStatusUpdatePayload",
+        "shared": false,
+        "description": "",
+        "contentType": "JSON",
+        "content": "",
+        "applicationDomainId": "wn33ovmz1kr",
+        "revisionNumber": 3,
+        "versions": [
+          {
+            "createdTime": 1603213012215,
+            "updatedTime": 1603215994711,
+            "createdBy": "q0vn2d5vxmp",
+            "changedBy": "q0vn2d5vxmp",
+            "id": "wn33ovmz1nj",
+            "schemaId": "wn33ovmz1lb",
+            "name": "1",
+            "versionNumber": "1",
+            "content": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema\",\n  \"$id\": \"http://example.com/example.json\",\n  \"type\": \"object\",\n  \"title\": \"The root schema\",\n  \"description\": \"The root schema comprises the entire JSON document.\",\n  \"default\": {},\n  \"examples\": [\n    {\n      \"ride_id\": \"545496c5-a334-4344-9662-efde68c0b98a\",\n      \"information_source\": \"RideDispatcher\",\n      \"point_idx\": 107,\n      \"latitude\": 40.75473,\n      \"longitude\": -73.98385,\n      \"heading\": 111,\n      \"speed\": 8,\n      \"timestamp\": \"2020-06-03T16:51:47.292-04:00\",\n      \"meter_reading\": 2.4375222,\n      \"meter_increment\": 0.02278058,\n      \"ride_status\": \"enroute\",\n      \"passenger_count\": 1,\n      \"driver\": {\n        \"driver_id\": 1234132,\n        \"first_name\": \"Frank\",\n        \"last_name\": \"Smith\",\n        \"rating\": 4.75,\n        \"car_class\": \"SUV\"\n      },\n      \"passenger\": {\n        \"passenger_id\": 2345243,\n        \"first_name\": \"Tamimi\",\n        \"last_name\": \"Menning\",\n        \"rating\": 2.23\n      }\n    }\n  ],\n  \"properties\": {\n    \"ride_id\": {\n      \"$id\": \"#/properties/ride_id\",\n      \"type\": \"string\",\n      \"title\": \"The ride identifier\",\n      \"description\": \"A UUID identifying the ride.\",\n      \"default\": \"\",\n      \"examples\": [\n        \"545496c5-a334-4344-9662-efde68c0b98a\"\n      ]\n    },\n    \"information_source\": {\n      \"$id\": \"#/properties/information_source\",\n      \"type\": \"string\",\n      \"title\": \"The information_source schema\",\n      \"description\": \"The app that sent this event.\",\n      \"default\": \"\",\n      \"examples\": [\n        \"RideDispatcher\"\n      ]\n    },\n    \"point_idx\": {\n      \"$id\": \"#/properties/point_idx\",\n      \"type\": \"integer\",\n      \"title\": \"The point_idx schema\",\n      \"description\": \"The update number for the ride. This increments for each RideUpdate for a given ride.\",\n      \"default\": 0,\n      \"examples\": [\n        107\n      ]\n    },\n    \"latitude\": {\n      \"$id\": \"#/properties/latitude\",\n      \"type\": \"number\",\n      \"minimum\": -90,\n      \"maximum\": 90,\n      \"title\": \"The latitude schema\",\n      \"description\": \"Current latitude of the vehicle.\",\n      \"default\": 0,\n      \"examples\": [\n        -40.75473\n      ]\n    },\n    \"longitude\": {\n      \"$id\": \"#/properties/longitude\",\n      \"type\": \"number\",\n      \"minimum\": -180,\n      \"maximum\": 180,\n      \"title\": \"The longitude schema\",\n      \"description\": \"Current longitude of the vehicle.\",\n      \"default\": 0,\n      \"examples\": [\n        -123.98385\n      ]\n    },\n    \"heading\": {\n      \"$id\": \"#/properties/heading\",\n      \"type\": \"integer\",\n      \"minimum\": 0,\n      \"maximum\": 359,\n      \"title\": \"The heading schema\",\n      \"description\": \"0-359 degrees approximate heading of the vehicle.\",\n      \"default\": 0,\n      \"examples\": [\n        111\n      ]\n    },\n    \"speed\": {\n      \"$id\": \"#/properties/speed\",\n      \"type\": \"integer\",\n      \"minimum\": 0,\n      \"title\": \"The speed schema\",\n      \"description\": \"Speed of the taxi in unknown units.\",\n      \"default\": 0,\n      \"examples\": [\n        20\n      ]\n    },\n    \"timestamp\": {\n      \"$id\": \"#/properties/timestamp\",\n      \"type\": \"string\",\n      \"title\": \"The timestamp schema\",\n      \"description\": \"The time the RideUpdate is being sent.\",\n      \"default\": \"\",\n      \"examples\": [\n        \"2020-06-03T16:51:47.292-04:00\"\n      ]\n    },\n    \"meter_reading\": {\n      \"$id\": \"#/properties/meter_reading\",\n      \"type\": \"number\",\n      \"minimum\": 0,\n      \"title\": \"The meter_reading schema\",\n      \"description\": \"The current value of the taxi's meter, in dollars $.  Float value will always be shown with 2 decimal places (cents).\",\n      \"default\": 0,\n      \"examples\": [\n        2.42\n      ]\n    },\n    \"meter_increment\": {\n      \"$id\": \"#/properties/meter_increment\",\n      \"type\": \"number\",\n      \"title\": \"The meter_increment schema\",\n      \"description\": \"The meter increment rate.\",\n      \"default\": 0,\n      \"examples\": [\n        0.02278058\n      ]\n    },\n    \"ride_status\": {\n      \"$id\": \"#/properties/ride_status\",\n      \"type\": \"string\",\n      \"enum\": [\n        \"accepted\",\n        \"pickup\",\n        \"enroute\",\n        \"dropoff\"\n      ],\n      \"title\": \"The ride_status schema\",\n      \"description\": \"The current status of the ride.\",\n      \"default\": \"\",\n      \"examples\": [\n        \"enroute\"\n      ]\n    },\n    \"passenger_count\": {\n      \"$id\": \"#/properties/passenger_count\",\n      \"type\": \"integer\",\n      \"minimum\": 0,\n      \"title\": \"The passenger_count schema\",\n      \"description\": \"The number of passengers in the car during this ride.\",\n      \"default\": 0,\n      \"examples\": [\n        1\n      ]\n    },\n    \"driver\": {\n      \"$id\": \"#/properties/driver\",\n      \"type\": \"object\",\n      \"title\": \"The driver schema\",\n      \"description\": \"Information about the driver.\",\n      \"default\": {},\n      \"examples\": [\n        {\n          \"driver_id\": 1234132,\n          \"first_name\": \"Frank\",\n          \"last_name\": \"Smith\",\n          \"rating\": 4.73,\n          \"car_class\": \"SUV\"\n        }\n      ],\n      \"required\": [\n        \"driver_id\",\n        \"first_name\",\n        \"last_name\",\n        \"rating\",\n        \"car_class\"\n      ],\n      \"properties\": {\n        \"driver_id\": {\n          \"$id\": \"#/properties/driver/properties/driver_id\",\n          \"type\": \"integer\",\n          \"title\": \"The driver_id schema\",\n          \"description\": \"A unique ID for the driver.\",\n          \"default\": 0,\n          \"examples\": [\n            1234132\n          ]\n        },\n        \"first_name\": {\n          \"$id\": \"#/properties/driver/properties/first_name\",\n          \"type\": \"string\",\n          \"title\": \"The first_name schema\",\n          \"description\": \"The Driver's first name.\",\n          \"default\": \"\",\n          \"examples\": [\n            \"Frank\"\n          ]\n        },\n        \"last_name\": {\n          \"$id\": \"#/properties/driver/properties/last_name\",\n          \"type\": \"string\",\n          \"title\": \"The last_name schema\",\n          \"description\": \"The Driver's Last Name.\",\n          \"default\": \"\",\n          \"examples\": [\n            \"Smith\"\n          ]\n        },\n        \"rating\": {\n          \"$id\": \"#/properties/driver/properties/rating\",\n          \"type\": \"number\",\n          \"minimum\": 0,\n          \"maximum\": 5,\n          \"title\": \"The rating schema\",\n          \"description\": \"The driver's current 5-star rating, showing 2 decimal places of accuracy.\",\n          \"default\": 0,\n          \"examples\": [\n            4.32\n          ]\n        },\n        \"car_class\": {\n          \"$id\": \"#/properties/driver/properties/car_class\",\n          \"type\": \"string\",\n          \"title\": \"The car_class schema\",\n          \"description\": \"The class of the vehicle.\",\n          \"default\": \"\",\n          \"examples\": [\n            \"SUV\",\n            \"Minivan\",\n            \"Sedan\",\n            \"Coupe\"\n          ]\n        }\n      },\n      \"additionalProperties\": true\n    },\n    \"passenger\": {\n      \"$id\": \"#/properties/passenger\",\n      \"type\": \"object\",\n      \"title\": \"The passenger schema\",\n      \"description\": \"Information about the Passenger.\",\n      \"default\": {},\n      \"examples\": [\n        {\n          \"passenger_id\": 2345243,\n          \"first_name\": \"Tamimi\",\n          \"last_name\": \"Menning\",\n          \"rating\": 2.25\n        }\n      ],\n      \"required\": [\n        \"passenger_id\",\n        \"first_name\",\n        \"last_name\",\n        \"rating\"\n      ],\n      \"properties\": {\n        \"passenger_id\": {\n          \"$id\": \"#/properties/passenger/properties/passenger_id\",\n          \"type\": \"integer\",\n          \"title\": \"The passenger_id schema\",\n          \"description\": \"A unique ID for the passenger.\",\n          \"default\": 0,\n          \"examples\": [\n            2345243\n          ]\n        },\n        \"first_name\": {\n          \"$id\": \"#/properties/passenger/properties/first_name\",\n          \"type\": \"string\",\n          \"title\": \"The first_name schema\",\n          \"description\": \"The passenger's first name.\",\n          \"default\": \"\",\n          \"examples\": [\n            \"Jesse\"\n          ]\n        },\n        \"last_name\": {\n          \"$id\": \"#/properties/passenger/properties/last_name\",\n          \"type\": \"string\",\n          \"title\": \"The last_name schema\",\n          \"description\": \"The passenger's last name.\",\n          \"default\": \"\",\n          \"examples\": [\n            \"Menning\"\n          ]\n        },\n        \"rating\": {\n          \"$id\": \"#/properties/passenger/properties/rating\",\n          \"type\": \"number\",\n          \"minimum\": 0,\n          \"maximum\": 5,\n          \"title\": \"The rating schema\",\n          \"description\": \"The passenger's current 5-star rating, showing 2 decimal places of accuracy.\",\n          \"default\": 0,\n          \"examples\": [\n            2.25\n          ]\n        }\n      },\n      \"additionalProperties\": true\n    }\n  },\n  \"additionalProperties\": true\n}",
+            "schemaRegistryId": "",
+            "revisionNumber": 2,
+            "type": "schemaVersion"
+          }
+        ],
+        "type": "schema"
+      }
+    ],
+    "events": [
+      {
+        "createdTime": 1603212653064,
+        "updatedTime": 1603213033788,
+        "createdBy": "q0vn2d5vxmp",
+        "changedBy": "q0vn2d5vxmp",
+        "id": "wn33ovmz1lv",
+        "name": "TaxiStatusUpdate",
+        "version": "0.0.1",
+        "shared": false,
+        "topicName": "taxinyc/ops/ride/updated/v1/${ride_status}/${driver_id}/${passenger_id}/${current_latitude}/${current_longitude}",
+        "description": "",
+        "schemaId": "wn33ovmz1lb",
+        "schemaVersionId": null,
+        "applicationDomainId": "wn33ovmz1kr",
+        "revisionNumber": 3,
+        "brokerType": "solace",
+        "keyPrimitivePayloadType": null,
+        "valuePrimitivePayloadType": null,
+        "type": "event"
+      }
+    ],
+    "applications": [
+      {
+        "createdTime": 1603212653074,
+        "updatedTime": 1603212811034,
+        "createdBy": "q0vn2d5vxmp",
+        "changedBy": "q0vn2d5vxmp",
+        "id": "wn33ovmz1mf",
+        "name": "Taxis",
+        "version": "0.0.1",
+        "description": "<p>This application represents each taxi in our fleet. The taxis are capable of sending and receiving real-time events that include information such as location and current ride status.  </p>",
+        "applicationDomainId": "wn33ovmz1kr",
+        "producedEventIds": [
+          "wn33ovmz1lv"
+        ],
+        "consumedEventIds": [],
+        "revisionNumber": 2,
+        "applicationClass": "unspecified",
+        "type": "application"
+      }
+    ],
+    "type": "applicationDomain"
+  }
+]

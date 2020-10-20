@@ -1,7 +1,6 @@
 
 package org.taxi.nyc;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -9,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.util.function.Consumer;
-
 
 @SpringBootApplication
 public class Application {
@@ -21,7 +19,7 @@ public class Application {
 	}
 
 	@Bean
-	public Consumer<RideAveragePayload> taxiNycV1StatsDropoffAvgConsumer() {
+	public Consumer<RideAveragePayload> taxinycOpsMonitoringUpdatedV1StatsDropoffAvgConsumer() {
 		return rideAverageUpdate -> {
 			logger.info("Received Ride Average Event:" + rideAverageUpdate);
 		};
