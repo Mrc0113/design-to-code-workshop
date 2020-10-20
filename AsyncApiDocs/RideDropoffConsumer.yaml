@@ -9,9 +9,7 @@ components:
           avg_passenger_count: 1.5
           window_ride_count: 5
           timestamp: '2020-06-04T20:09:59.99832-04:00'
-      description: >-
-        Event Payload which contains average meter readings, average passenger
-        counts, and the number of rides in a given window duration.
+      description: The root schema comprises the entire JSON document.
       additionalProperties: true
       type: object
       title: The root schema
@@ -67,19 +65,16 @@ components:
     RideAverageUpdate:
       payload:
         $ref: '#/components/schemas/RideAveragePayload'
-      description: This event contains the average cost of rides over a specified duration
       schemaFormat: application/vnd.aai.asyncapi+json;version=2.0.0
       contentType: application/json
 channels:
-  taxi/nyc/v1/stats/dropoff/avg:
+  taxinyc/ops/monitoring/updated/v1/stats/dropoff/avg:
     subscribe:
       message:
         $ref: '#/components/messages/RideAverageUpdate'
 asyncapi: 2.0.0
 info:
-  description: >-
-    This is a spring cloud stream microservice that will consume summary events for
-    further analysis
+  x-application-class: unspecified
   title: RideDropoffConsumer
   x-view: provider
   version: 0.0.1

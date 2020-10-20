@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    function:
+      definition: taxinycOpsMonitoringUpdatedV1StatsDropoffAvgConsumer
+    stream:
+      bindings:
+        taxinycOpsMonitoringUpdatedV1StatsDropoffAvgConsumer-in-0:
+          destination: test/taxinyc/marc/ops/monitoring/updated/v1/stats/dropoff/avg
+      binders:
+        solace-binder:
+          type: solace
+          environment:
+            solace:
+              java:
+                host: 'taxi.messaging.solace.cloud:55555'
+                msgVpn: nyc-modern-taxi
+                clientUsername: public-taxi-user
+                clientPassword: iliketaxis
+logging:
+  level:
+    root: info
+    org:
+      springframework: info
+

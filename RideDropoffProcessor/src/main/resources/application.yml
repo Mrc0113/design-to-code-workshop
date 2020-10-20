@@ -1,0 +1,38 @@
+spring:
+  cloud:
+    function:
+      definition: processDropoffRideAverages
+    stream:
+      bindings:
+        processDropoffRideAverages-out-0:
+          destination: test/taxinyc/marc/ops/monitoring/updated/v1/stats/dropoff/avg
+        processDropoffRideAverages-in-0:
+          destination: test/taxinyc/RideDropoffProcessorQueue
+      solace:
+        bindings:
+          processDropoffRideAverages-in-0:
+            consumer:
+              queueAdditionalSubscriptions: 'taxinyc/ops/ride/updated/v1/dropoff/>'
+      binders:
+        solace-binder:
+          type: solace
+          environment:
+            solace:
+              java:
+                host: 'tcp://taxi.messaging.solace.cloud:55555'
+                msgVpn: nyc-modern-taxi
+                clientUsername: public-taxi-user
+                clientPassword: iliketaxis
+logging:
+  level:
+    root: info
+    org:
+      springframework: info
+server:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
