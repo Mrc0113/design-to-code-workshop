@@ -13,17 +13,17 @@ public class TaxiStatusUpdatePayload {
 	public TaxiStatusUpdatePayload (
 		String rideId, 
 		Integer heading, 
-		Double latitude, 
+		java.math.BigDecimal latitude, 
 		Integer passengerCount, 
 		Integer pointIdx, 
 		String informationSource, 
 		Integer speed, 
 		Driver driver, 
 		Passenger passenger, 
-		Double meterIncrement, 
-		Double longitude, 
+		java.math.BigDecimal meterIncrement, 
+		java.math.BigDecimal longitude, 
 		String timestamp, 
-		Double meterReading, 
+		java.math.BigDecimal meterReading, 
 		RideStatus rideStatus) {
 		this.rideId = rideId;
 		this.heading = heading;
@@ -45,7 +45,7 @@ public class TaxiStatusUpdatePayload {
 	@JsonProperty("ride_id")
 	private String rideId;
 	private Integer heading;
-	private Double latitude;
+	private java.math.BigDecimal latitude;
 	@JsonProperty("passenger_count")
 	private Integer passengerCount;
 	@JsonProperty("point_idx")
@@ -56,11 +56,11 @@ public class TaxiStatusUpdatePayload {
 	private Driver driver;
 	private Passenger passenger;
 	@JsonProperty("meter_increment")
-	private Double meterIncrement;
-	private Double longitude;
+	private java.math.BigDecimal meterIncrement;
+	private java.math.BigDecimal longitude;
 	private String timestamp;
 	@JsonProperty("meter_reading")
-	private Double meterReading;
+	private java.math.BigDecimal meterReading;
 	@JsonProperty("ride_status")
 	private RideStatus rideStatus;
 
@@ -84,11 +84,11 @@ public class TaxiStatusUpdatePayload {
 	}
 
 
-	public Double getLatitude() {
+	public java.math.BigDecimal getLatitude() {
 		return latitude;
 	}
 
-	public TaxiStatusUpdatePayload setLatitude(Double latitude) {
+	public TaxiStatusUpdatePayload setLatitude(java.math.BigDecimal latitude) {
 		this.latitude = latitude;
 		return this;
 	}
@@ -151,7 +151,7 @@ public class TaxiStatusUpdatePayload {
 		}
 		public Driver (
 			Integer driverId, 
-			Double rating, 
+			java.math.BigDecimal rating, 
 			String lastName, 
 			String carClass, 
 			String firstName) {
@@ -165,7 +165,7 @@ public class TaxiStatusUpdatePayload {
 
 		@JsonProperty("driver_id")
 		private Integer driverId;
-		private Double rating;
+		private java.math.BigDecimal rating;
 		@JsonProperty("last_name")
 		private String lastName;
 		@JsonProperty("car_class")
@@ -183,11 +183,11 @@ public class TaxiStatusUpdatePayload {
 		}
 
 
-		public Double getRating() {
+		public java.math.BigDecimal getRating() {
 			return rating;
 		}
 
-		public Driver setRating(Double rating) {
+		public Driver setRating(java.math.BigDecimal rating) {
 			this.rating = rating;
 			return this;
 		}
@@ -253,7 +253,7 @@ public class TaxiStatusUpdatePayload {
 		}
 		public Passenger (
 			Integer passengerId, 
-			Double rating, 
+			java.math.BigDecimal rating, 
 			String lastName, 
 			String firstName) {
 			this.passengerId = passengerId;
@@ -265,7 +265,7 @@ public class TaxiStatusUpdatePayload {
 
 		@JsonProperty("passenger_id")
 		private Integer passengerId;
-		private Double rating;
+		private java.math.BigDecimal rating;
 		@JsonProperty("last_name")
 		private String lastName;
 		@JsonProperty("first_name")
@@ -281,11 +281,11 @@ public class TaxiStatusUpdatePayload {
 		}
 
 
-		public Double getRating() {
+		public java.math.BigDecimal getRating() {
 			return rating;
 		}
 
-		public Passenger setRating(Double rating) {
+		public Passenger setRating(java.math.BigDecimal rating) {
 			this.rating = rating;
 			return this;
 		}
@@ -323,21 +323,21 @@ public class TaxiStatusUpdatePayload {
 
 
 
-	public Double getMeterIncrement() {
+	public java.math.BigDecimal getMeterIncrement() {
 		return meterIncrement;
 	}
 
-	public TaxiStatusUpdatePayload setMeterIncrement(Double meterIncrement) {
+	public TaxiStatusUpdatePayload setMeterIncrement(java.math.BigDecimal meterIncrement) {
 		this.meterIncrement = meterIncrement;
 		return this;
 	}
 
 
-	public Double getLongitude() {
+	public java.math.BigDecimal getLongitude() {
 		return longitude;
 	}
 
-	public TaxiStatusUpdatePayload setLongitude(Double longitude) {
+	public TaxiStatusUpdatePayload setLongitude(java.math.BigDecimal longitude) {
 		this.longitude = longitude;
 		return this;
 	}
@@ -353,11 +353,11 @@ public class TaxiStatusUpdatePayload {
 	}
 
 
-	public Double getMeterReading() {
+	public java.math.BigDecimal getMeterReading() {
 		return meterReading;
 	}
 
-	public TaxiStatusUpdatePayload setMeterReading(Double meterReading) {
+	public TaxiStatusUpdatePayload setMeterReading(java.math.BigDecimal meterReading) {
 		this.meterReading = meterReading;
 		return this;
 	}

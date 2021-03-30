@@ -11,9 +11,9 @@ public class RideAveragePayload {
 	public RideAveragePayload () {
 	}
 	public RideAveragePayload (
-		Double avgMeterReading, 
+		java.math.BigDecimal avgMeterReading, 
 		Integer windowDurationSec, 
-		Double avgPassengerCount, 
+		java.math.BigDecimal avgPassengerCount, 
 		Integer windowRideCount, 
 		String timestamp) {
 		this.avgMeterReading = avgMeterReading;
@@ -25,20 +25,20 @@ public class RideAveragePayload {
 
 
 	@JsonProperty("avg_meter_reading")
-	private Double avgMeterReading;
+	private java.math.BigDecimal avgMeterReading;
 	@JsonProperty("window_duration_sec")
 	private Integer windowDurationSec;
 	@JsonProperty("avg_passenger_count")
-	private Double avgPassengerCount;
+	private java.math.BigDecimal avgPassengerCount;
 	@JsonProperty("window_ride_count")
 	private Integer windowRideCount;
 	private String timestamp;
 
-	public Double getAvgMeterReading() {
+	public java.math.BigDecimal getAvgMeterReading() {
 		return avgMeterReading;
 	}
 
-	public RideAveragePayload setAvgMeterReading(Double avgMeterReading) {
+	public RideAveragePayload setAvgMeterReading(java.math.BigDecimal avgMeterReading) {
 		this.avgMeterReading = avgMeterReading;
 		return this;
 	}
@@ -54,11 +54,11 @@ public class RideAveragePayload {
 	}
 
 
-	public Double getAvgPassengerCount() {
+	public java.math.BigDecimal getAvgPassengerCount() {
 		return avgPassengerCount;
 	}
 
-	public RideAveragePayload setAvgPassengerCount(Double avgPassengerCount) {
+	public RideAveragePayload setAvgPassengerCount(java.math.BigDecimal avgPassengerCount) {
 		this.avgPassengerCount = avgPassengerCount;
 		return this;
 	}
