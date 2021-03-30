@@ -5,7 +5,7 @@ spring:
     stream:
       bindings:
         processDropoffRideAverages-out-0:
-          destination: test/taxinyc/marc/ops/monitoring/updated/v1/stats/dropoff/avg
+          destination: test/taxinyc/yourname/ops/ride/updated/v1/stats/dropoff/avg
         processDropoffRideAverages-in-0:
           destination: test/taxinyc/RideDropoffProcessorQueue
       solace:
@@ -19,7 +19,7 @@ spring:
           environment:
             solace:
               java:
-                host: 'tcp://taxi.messaging.solace.cloud:55555'
+                host: 'taxi.messaging.solace.cloud:55555'
                 msgVpn: nyc-modern-taxi
                 clientUsername: public-taxi-user
                 clientPassword: iliketaxis
@@ -28,11 +28,4 @@ logging:
     root: info
     org:
       springframework: info
-server:
-  port: 8080
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
 

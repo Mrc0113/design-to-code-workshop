@@ -5,7 +5,7 @@ spring:
     stream:
       bindings:
         taxinycOpsMonitoringUpdatedV1StatsDropoffAvgConsumer-in-0:
-          destination: test/taxinyc/marc/ops/monitoring/updated/v1/stats/dropoff/avg
+          destination: test/taxinyc/yourname/ops/ride/updated/v1/stats/dropoff/avg
       binders:
         solace-binder:
           type: solace
